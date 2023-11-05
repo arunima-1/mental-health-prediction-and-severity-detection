@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='/styles/predict.css')}}"
+    />
+
+    <!-- title of the project -->
+    <title>RESULTS</title>
+  </head>
+
+  <body>
+    <!-------------------------------------- prediction result pg ------------------------------------------------>
+
+    <h1 class="title">PREDICTION RESULT</h1>
+
+    <!----------------------------------------- result condn ---------------------------------------------------->
+    <div class="results">
+      {% if prediction==0 %}
+      <div class="healthy">
+        <h3>You are healthy</h3>
+        <p>Your mental health is alright</p>
+        <div class="suggestions">
+          <h3>Suggestions for Your Well-being:</h3>
+          <ul>
+            <li>
+              <img
+                src="{{url_for('static', filename='relax.png')}}"
+                alt="Relax Image"
+              />
+              Take some time to relax and unwind.
+            </li>
+            <li>
+              <img
+                src="{{url_for('static', filename='movie.png')}}"
+                alt="Movie Image"
+              />
+              It's always a good day to watch a movie and stay stress-free.
+            </li>
+            <li>
+              <img
+                src="{{url_for('static', filename='exercise.png')}}"
+                alt="Exercise Image"
+              />
+              Maintain a healthy lifestyle with regular exercise.
+            </li>
+            <li>
+              <img
+                src="{{url_for('static', filename='friends adn family.png')}}"
+                alt="Socialize Image"
+              />
+              Connect with friends and family for social support.
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% elif prediction==1 %}
+      <div class="nothealthy">
+        <h3>You are not healthy</h3>
+        <p>You are likely to have depression</p>
+        <p>Your severity rate is: 52%</p>
+        <p>You need medical guidance</p>
+      </div>
+      <div class="suggestions">
+        <h3>Suggestions for Your Mental Health:</h3>
+        <ul>
+          <li>
+            <img
+              src="{{url_for('static', filename='meditation.png')}}"
+              alt="Mindfulness Image"
+            />
+            Practice mindfulness and meditation.
+          </li>
+          <li>
+            <img
+              src="{{url_for('static', filename='exercise.png')}}"
+              alt="Exercise Image"
+            />
+            Stay physically active with regular exercise.
+          </li>
+          <li>
+            <img
+              src="{{url_for('static', filename='friends adn family.png')}}"
+              alt="Support Image"
+            />
+            Seek support from friends and family.
+          </li>
+          <li>
+            <img
+              src="{{url_for('static', filename='therapy.png')}}"
+              alt="Therapy Image"
+            />
+            Consider professional counseling or therapy.
+          </li>
+        </ul>
+      </div>
+
+      <div class="contacts">
+        <h3>Helplines and Professionals:</h3>
+        <p>
+          If you need immediate assistance or want to talk to a mental health
+          professional, you can reach out to the following resources:
+        </p>
+        <ul>
+          <li>
+            <a href="tel:123456789">Mental Health Helpline: 123-456-789</a>
+          </li>
+          <li>
+            <a href="mailto:info@example.com"
+              >Email a Mental Health Professional: info@example.com</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      {% endif %}
+      <!-------------------------------------- end of result condn ----------------------------------------------->
+    </div>
+  </body>
+</html>
